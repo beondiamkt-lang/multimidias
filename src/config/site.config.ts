@@ -147,7 +147,7 @@ const siteConfig: SiteConfig = {
   ],
   twitter: undefined,
   verification: {
-    google: GOOGLE_SITE_VERIFICATION,
+    google: GOOGLE_SITE_VERIFICATION || 'ClKOb5kEf3GrOJHsse7SLd0nUSbqqWAE4lNK0WMiMT4',
     bing: BING_SITE_VERIFICATION,
   },
   authorImage: '/avatar.svg',
