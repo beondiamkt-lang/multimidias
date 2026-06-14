@@ -130,7 +130,7 @@ export interface SiteConfig {
 const siteConfig: SiteConfig = {
   name: 'multi.mid.IAs',
   description:
-    'multi.mid.IAs — A production-ready Astro 6 starter with 12 beautiful themes, 57+ components, built-in i18n, dark mode and a fast, modern foundation to build anything on.',
+    'Consultoria especializada em SEO, AEO e GEO — posicionamento orgânico no Google e nas IAs generativas.',
   url: SITE_URL || 'https://astrorocket.dev',
   ogImage: '/og-default.svg',
   author: 'Hans Martens',
