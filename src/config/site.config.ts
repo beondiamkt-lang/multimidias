@@ -131,7 +131,7 @@ const siteConfig: SiteConfig = {
   name: 'multi.mid.IAs',
   description:
     'Consultoria especializada em SEO, AEO e GEO — posicionamento orgânico no Google e nas IAs generativas.',
-  url: SITE_URL || 'https://multimidias.pages.dev',
+  url: SITE_URL || 'https://multimidias.com.br',
   ogImage: '/og-default.svg',
   author: 'multi.mid.IAs',
   email: 'beondiamkt@gmail.com',
