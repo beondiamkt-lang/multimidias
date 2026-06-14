@@ -1,71 +1,71 @@
 ---
 title: "Astro Rocket"
-description: "Astro Rocket — my free, open-source Astro 6 theme. A finished website you launch by changing the text: 12 colour themes, 57 components, a 3-state colour mode, and a 100/100/100/100 Lighthouse score out of the box."
+description: "Astro Rocket — meu tema gratuito e open-source para Astro 6. Um site pronto que você lança trocando o texto: 12 temas de cores, 57 componentes, modo de cor com 3 estados e nota 100/100/100/100 no Lighthouse de fábrica."
 url: "https://astrorocket.dev"
 repo: "https://github.com/hansmartensdev/Astro-Rocket"
 tags: ["Astro", "TypeScript", "Tailwind CSS", "Open Source"]
 featured: true
 order: 0
 year: 2026
-role: "Designer & Developer"
-services: ["Design System", "Component Library", "Open Source"]
-meta: ["Free & open source", "MIT licence", "Astro 6", "Lighthouse 4×100"]
+role: "Designer e Desenvolvedor"
+services: ["Design System", "Biblioteca de Componentes", "Open Source"]
+meta: ["Gratuito e open source", "Licença MIT", "Astro 6", "Lighthouse 4×100"]
 icon: "rocket"
 image: "../../assets/projects/hans-martens-dev-astro-rocket.jpg"
-imageAlt: "Astro Rocket — my open-source Astro 6 theme, shown on its astrorocket.dev demo."
+imageAlt: "Astro Rocket — meu tema open-source para Astro 6, mostrado na demo astrorocket.dev."
 ---
 
 import LighthouseScoresGrid from '@/components/landing/LighthouseScoresGrid.astro';
 
-## What it is
+## O que é
 
-**Astro Rocket** is my own free, open-source theme, built on **Astro 6** and **Tailwind CSS v4**. It isn't a boilerplate you spend a week wiring up — it's a finished website. Every page is already designed and built, so you change the text, pick a colour, and go live.
+**Astro Rocket** é meu próprio tema gratuito e open-source, construído sobre **Astro 6** e **Tailwind CSS v4**. Não é um boilerplate que você passa uma semana configurando — é um site pronto. Cada página já está desenhada e construída, então você troca o texto, escolhe uma cor e publica.
 
-I made it for the people I know best: designers, freelancers, and developers who want a site that already looks finished on day one. It's MIT-licensed, [up on GitHub](https://github.com/hansmartensdev/Astro-Rocket), and listed on the [official Astro themes directory](https://astro.build/themes/details/astro-rocket/). The full thing runs live at [astrorocket.dev](https://astrorocket.dev).
+Eu o fiz para as pessoas que conheço melhor: designers, freelancers e desenvolvedores que querem um site que já pareça finalizado no primeiro dia. É licenciado sob MIT, está [no GitHub](https://github.com/hansmartensdev/Astro-Rocket) e listado no [diretório oficial de temas do Astro](https://astro.build/themes/details/astro-rocket/). A versão completa está no ar em [astrorocket.dev](https://astrorocket.dev).
 
-## Lighthouse score result
+## Resultado no Lighthouse
 
 <div class="my-10">
   <LighthouseScoresGrid />
 </div>
 
-The whole point was a starter that scores **100 on all four Lighthouse categories — Performance, Accessibility, Best Practices, and SEO — out of the box**, on both mobile and desktop. And not on a stripped-back demo page: the full site, with the animations, the theme switcher, the typed headline, and the contact form all running.
+O objetivo era um starter que tirasse **100 nas quatro categorias do Lighthouse — Performance, Acessibilidade, Boas Práticas e SEO — de fábrica**, tanto no mobile quanto no desktop. E não em uma página de demo simplificada: o site completo, com as animações, o seletor de tema, o título digitado e o formulário de contato todos funcionando.
 
-That score isn't something I bolt on at the end. It comes from Astro shipping **zero JavaScript by default** and me refusing to undo that. If you want the plain-language version of what the four numbers mean, I wrote it up in [the Lighthouse post](https://hansmartens.dev/blog/lighthouse-score-explained).
+Essa nota não é algo que eu adiciono no final. Ela vem do Astro entregando **zero JavaScript por padrão** e de eu me recusar a desfazer isso. Se você quiser a versão em linguagem simples do que esses quatro números significam, eu escrevi sobre isso [neste post sobre o Lighthouse](https://hansmartens.dev/blog/lighthouse-score-explained).
 
-## Twelve themes, one click
+## Doze temas, um clique
 
-Astro Rocket ships **twelve colour themes** — Orange, Amber, Lime, Emerald, Teal, Cyan, Sky, **Blue**, Indigo, Violet, Purple, and Magenta. They sit as swatches in the header: click one and every brand colour on the page — buttons, links, the auto-generated logo badge, the blog-cover gradients — updates live, no rebuild. **Blue is the default.** Once you've settled on a colour, you can pull the selector out of the header and keep everything else.
+O Astro Rocket vem com **doze temas de cores** — Orange, Amber, Lime, Emerald, Teal, Cyan, Sky, **Blue**, Indigo, Violet, Purple e Magenta. Eles aparecem como amostras no cabeçalho: clique em uma e todas as cores da marca na página — botões, links, o badge do logo gerado automaticamente, os gradientes das capas do blog — são atualizadas em tempo real, sem rebuild. **Blue é o padrão.** Depois de escolher uma cor, você pode remover o seletor do cabeçalho e manter tudo o resto.
 
-Underneath it's just CSS custom properties scoped to a `data-theme` attribute, so the browser does all the work and the server never has to think about it.
+Por baixo, são apenas propriedades customizadas de CSS vinculadas a um atributo `data-theme`, então o navegador faz todo o trabalho e o servidor nunca precisa se preocupar com isso.
 
-## System, Light, Dark
+## Sistema, Claro, Escuro
 
-Colour mode is a proper **three-state control**, not an on/off switch. You can pin **Light** or **Dark**, or choose **System** and let the visitor's own machine decide — and under System it tracks the OS setting live, flipping the moment the OS does. The choice is saved between visits, and a small script runs in the page head before the first paint, so there's never a flash of the wrong mode.
+O modo de cor é um **controle de três estados** de verdade, não um simples liga/desliga. Você pode fixar **Claro** ou **Escuro**, ou escolher **Sistema** e deixar a máquina do visitante decidir — e no modo Sistema ele acompanha a configuração do sistema operacional em tempo real, mudando no momento em que o SO muda. A escolha é salva entre as visitas, e um pequeno script roda no head da página antes da primeira renderização, então nunca há um flash do modo errado.
 
-## The heroes
+## Os heroes
 
-The heroes are the part I'm happiest with, and they behave differently depending on the page:
+Os heroes são a parte que mais me deixa satisfeito, e eles se comportam de forma diferente dependendo da página:
 
-- **The homepage hero** is a single vertical gradient — the brand colour at the top, fading down to black. It looks the **same in light and dark mode** on purpose. The first screen is where the brand has to land, so I didn't want the visitor's OS quietly changing its mood. The headline types itself, and the line is measured up front so the layout never shifts while it does.
-- **The inner pages** — services, projects, blog, contact — share a quieter hero that **flips with the colour mode**. In **light mode** it's a faint architectural line grid, like pale blueprint paper, brightest under the header and fading out to the page edges. In **dark mode** that grid gives way to a soft **beam of brand light** spilling down from beneath the header. Both are pure CSS — no JavaScript, and nothing for Lighthouse to pay for.
+- **O hero da página inicial** é um único gradiente vertical — a cor da marca no topo, esmaecendo até o preto. Ele parece o **mesmo no modo claro e no escuro**, de propósito. A primeira tela é onde a marca precisa causar impacto, então eu não queria que o sistema operacional do visitante mudasse discretamente o clima. O título se digita sozinho, e a linha é medida antecipadamente para que o layout nunca se mova durante a digitação.
+- **As páginas internas** — serviços, projetos, blog, contato — compartilham um hero mais discreto que **muda com o modo de cor**. No **modo claro** é uma grade de linhas arquitetônicas suave, como papel de planta baixa, mais brilhante sob o cabeçalho e esmaecendo até as bordas da página. No **modo escuro** essa grade dá lugar a um **feixe suave de luz da marca** descendo de sob o cabeçalho. Ambos são CSS puro — sem JavaScript, e nada para o Lighthouse cobrar.
 
-## What's in the box
+## O que vem na caixa
 
-The heart of the project is the **component library — 57 components** (33 UI, plus blog, landing, layout, pattern, and SEO pieces), every one typed with TypeScript, dark-mode aware, and built on a three-tier design-token system. Around that, the things a real portfolio or marketing site needs are already wired up:
+O coração do projeto é a **biblioteca de componentes — 57 componentes** (33 de UI, além de peças de blog, landing, layout, padrões e SEO), todos tipados com TypeScript, compatíveis com modo escuro e construídos sobre um sistema de design tokens em três camadas. Em torno disso, tudo o que um portfólio ou site de marketing de verdade precisa já está pronto:
 
-- A full **MDX blog** with tags, RSS, an optional [table of contents](/blog/table-of-contents), and optional Giscus comments
-- The complete **SEO layer** — JSON-LD, sitemap, robots, Open Graph, and a ready-made social image
-- A working **contact form** and newsletter, both powered by [Resend](/blog/contact-form-resend-setup)
-- **Pagefind** static search, and 350+ Lucide plus 3,000+ Simple Icons through a single `Icon` component
-- Native, **opt-in i18n** — English and Dutch in the box, off until you want it
-- A layered [animation system](/blog/animations-in-astro-rocket) — scroll reveals, a scroll-reactive header, animated counters, the typed headline — all of it respecting reduced motion
-- Deploy configs for **Vercel, Netlify, and Cloudflare**, ready to push
+- Um **blog em MDX** completo com tags, RSS, um [sumário opcional](/blog/table-of-contents) e comentários opcionais via Giscus
+- A **camada de SEO** completa — JSON-LD, sitemap, robots, Open Graph e uma imagem social pronta
+- Um **formulário de contato** funcional e newsletter, ambos integrados com o [Resend](/blog/contact-form-resend-setup)
+- Busca estática com **Pagefind**, e mais de 350 ícones Lucide e 3.000 Simple Icons através de um único componente `Icon`
+- **i18n opcional**, nativo — inglês e holandês já incluídos, desativado até você precisar
+- Um [sistema de animações](/blog/animations-in-astro-rocket) em camadas — revelações no scroll, cabeçalho reativo ao scroll, contadores animados, o título digitado — tudo respeitando a preferência de movimento reduzido
+- Configurações de deploy para **Vercel, Netlify e Cloudflare**, prontas para usar
 
-## Built on Velocity
+## Construído sobre o Velocity
 
-Astro Rocket is a fork of **[Velocity](https://github.com/southwellmedia/velocity)** by Southwell Media — a strong Astro boilerplate with a serious design system underneath it. Full credit to them for that foundation. I took it somewhere different: a complete, ready-to-launch site where the only thing standing between a clone and a live website is your own text.
+O Astro Rocket é um fork do **[Velocity](https://github.com/southwellmedia/velocity)**, da Southwell Media — um boilerplate sólido para Astro com um sistema de design sério por trás. Todo o crédito a eles por essa base. Eu o levei para outro lugar: um site completo e pronto para lançar, onde a única coisa entre um clone e um site no ar é o seu próprio texto.
 
-## Free, and on GitHub
+## Gratuito, e no GitHub
 
-This is the starting point I wish I'd had — already at 100 across the board, with the patterns I actually use built in. It's free, it's [on GitHub](https://github.com/hansmartensdev/Astro-Rocket), and if it saves you a week of setup, a star is the nicest way to say thanks.
+Este é o ponto de partida que eu gostaria de ter tido — já com nota 100 em tudo, com os padrões que eu realmente uso já incluídos. É gratuito, está [no GitHub](https://github.com/hansmartensdev/Astro-Rocket), e se ele te poupar uma semana de configuração, uma estrela é a forma mais gentil de agradecer.

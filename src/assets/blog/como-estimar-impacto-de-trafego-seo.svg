@@ -1,0 +1,25 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg  { fill: var(--brand-500); }
+    .txt { fill: var(--brand-50); font-family: 'Outfit Variable', Outfit, system-ui, -apple-system, sans-serif; font-weight: 800; }
+    .sub { fill: var(--brand-100); font-family: 'Outfit Variable', Outfit, system-ui, -apple-system, sans-serif; font-weight: 500; }
+    .cor { stroke: var(--brand-300); stroke-width: 1.5; fill: none; stroke-opacity: 0.45; }
+    .ico { stroke: var(--brand-50); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; fill: none; opacity: 0.9; }
+  </style>
+  <rect width="1200" height="630" class="bg"/>
+  <!-- Bar chart icon -->
+  <g transform="translate(510, 140)">
+    <rect x="0" y="60" width="28" height="60" class="ico"/>
+    <rect x="38" y="30" width="28" height="90" class="ico"/>
+    <rect x="76" y="10" width="28" height="110" class="ico"/>
+    <rect x="114" y="40" width="28" height="80" class="ico"/>
+    <line x1="-10" y1="120" x2="160" y2="120" class="ico"/>
+    <polyline points="10,55 48,25 86,5 124,35" stroke="var(--brand-50)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.6"/>
+  </g>
+  <text x="600" y="380" font-size="60" text-anchor="middle" letter-spacing="-1" class="txt">Impacto de Tráfego SEO</text>
+  <text x="600" y="455" font-size="30" text-anchor="middle" class="sub">Como estimar o retorno das suas correções</text>
+  <path d="M 36 60 L 36 36 L 60 36" class="cor"/>
+  <path d="M 1140 36 L 1164 36 L 1164 60" class="cor"/>
+  <path d="M 36 570 L 36 594 L 60 594" class="cor"/>
+  <path d="M 1140 594 L 1164 594 L 1164 570" class="cor"/>
+</svg>

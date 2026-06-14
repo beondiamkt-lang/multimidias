@@ -91,7 +91,7 @@ const {
   nav,
   extraNav = [],
   showCta = false,
-  cta = { label: 'Start a project', href: '/contact' },
+  cta = { label: 'Iniciar um projeto', href: '/contato' },
   actions = [],
   showSearch = true,
   showThemeToggle = true,
@@ -179,10 +179,10 @@ function getSocialIconData(url: string): { icon: string; label: string } {
 function getNavIcon(href: string): string {
   if (href === '/' || href === '') return 'home';
   if (href.startsWith('/blog'))     return 'pen-line';
-  if (href.startsWith('/projects')) return 'layers';
-  if (href.startsWith('/services')) return 'sparkles';
-  if (href.startsWith('/about'))    return 'user';
-  if (href.startsWith('/contact'))  return 'mail';
+  if (href.startsWith('/projetos')) return 'layers';
+  if (href.startsWith('/servicos')) return 'sparkles';
+  if (href.startsWith('/sobre'))    return 'user';
+  if (href.startsWith('/contato'))  return 'mail';
   if (href.startsWith('#'))         return 'hash';
   if (href.startsWith('http'))      return 'arrow-up-right';
   return 'chevron-right';
@@ -431,7 +431,7 @@ const buttonId = `${menuId}-button`;
             isFloating ? 'px-3' : cn('mx-auto px-4', maxWidthClass)
           )}>
             <section class="mobile-menu-section">
-              <p class="mobile-menu-label">Navigate</p>
+              <p class="mobile-menu-label">Navegar</p>
               <ul class="space-y-0.5">
                 {navItems.map(({ label, href }, idx) => {
                   const active = isActive(href);
@@ -463,12 +463,12 @@ const buttonId = `${menuId}-button`;
 
             {showThemeSelector && (
               <section class="mobile-menu-section">
-                <p class="mobile-menu-label">Theme</p>
+                <p class="mobile-menu-label">Tema</p>
                 <div
                   class="mobile-menu-stagger flex items-center justify-between rounded-xl px-3 py-2.5"
                   style={`--stagger-index: ${navItems.length}`}
                 >
-                  <span class="text-sm text-foreground-muted">Colour theme</span>
+                  <span class="text-sm text-foreground-muted">Tema de cor</span>
                   <ThemeSelector />
                 </div>
               </section>
@@ -489,7 +489,7 @@ const buttonId = `${menuId}-button`;
 
             {mobileSocialLinks.length > 0 && (
               <section class="mobile-menu-section">
-                <p class="mobile-menu-label">Connect</p>
+                <p class="mobile-menu-label">Conectar</p>
                 <div class="flex flex-wrap items-center gap-2 px-2 pt-1 pb-2">
                   {mobileSocialLinks.map((url, sIdx) => {
                     const { icon, label } = getSocialIconData(url);

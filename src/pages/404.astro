@@ -12,52 +12,52 @@ import { Hero } from '@/components/hero';
 const recoveryLinks = [
   {
     icon: 'layers',
-    title: 'Projects',
-    description: 'Selected work and case studies.',
-    href: '/projects',
+    title: 'Projetos',
+    description: 'Trabalhos selecionados e estudos de caso.',
+    href: '/projetos',
   },
   {
     icon: 'book',
     title: 'Blog',
-    description: 'Notes on design, code, and the craft.',
+    description: 'Notas sobre design, código e o ofício.',
     href: '/blog',
   },
   {
     icon: 'mail',
-    title: 'Contact',
-    description: 'Start a conversation about your project.',
-    href: '/contact',
+    title: 'Contato',
+    description: 'Comece uma conversa sobre o seu projeto.',
+    href: '/contato',
   },
 ];
 ---
 
 <PageLayout
-  title="Page not found — Astro Rocket"
-  description="This page has moved, been removed, or never existed in the first place."
+  title="Página não encontrada — Astro Rocket"
+  description="Esta página foi movida, removida ou nunca existiu."
   noindex
   eagerReveal
 >
   <Hero layout="centered" size="sm">
     <Badge slot="badge" variant="brand" pill>
       <Icon name="compass" size="sm" />
-      404 — page not found
+      404 — página não encontrada
     </Badge>
 
     <h1 slot="title">
-      Page not <span class="text-brand-500">found.</span>
+      Página não <span class="text-brand-500">encontrada.</span>
     </h1>
 
     <p slot="description">
-      This page has moved, been removed, or never existed in the first place. Let's get you back on track.
+      Esta página foi movida, removida ou nunca existiu. Vamos te ajudar a voltar ao caminho certo.
     </p>
 
     <div slot="actions" class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <Button href="/" size="lg">
         <Icon name="arrow-left" size="sm" />
-        Back to home
+        Voltar ao início
       </Button>
       <Button href="/blog" variant="outline" size="lg">
-        Browse the blog
+        Ver o blog
         <Icon name="arrow-right" size="sm" />
       </Button>
     </div>
@@ -68,7 +68,7 @@ const recoveryLinks = [
     <div class="mx-auto max-w-6xl px-6">
       <div class="mb-8 text-center" data-reveal>
         <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground">
-          Try one of these instead
+          Tente uma destas opções
         </h2>
       </div>
 

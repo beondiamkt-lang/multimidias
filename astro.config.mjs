@@ -11,6 +11,7 @@ import netlify from '@astrojs/netlify';
 import i18nConfig from './src/config/i18n.config.ts';
 
 const isNetlify = process.env.DEPLOY_TARGET === 'netlify';
+const isCloudflare = process.env.DEPLOY_TARGET === 'cloudflare';
 
 /**
  * Pagefind static search index, generated after every `astro build`.
@@ -60,7 +61,7 @@ const astroI18nOptions = i18nEnabled
 
 export default defineConfig({
   output: 'static',
-  adapter: isNetlify ? netlify() : vercel(),
+  adapter: isCloudflare ? undefined : isNetlify ? netlify() : vercel(),
   site: process.env.SITE_URL || 'https://example.com',
   ...(astroI18nOptions ? { i18n: astroI18nOptions } : {}),
 

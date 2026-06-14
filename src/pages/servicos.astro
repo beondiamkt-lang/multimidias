@@ -1,0 +1,636 @@
+---
+/**
+ * Services page
+ * URL: /servicos
+ */
+import PageLayout from '@/layouts/PageLayout.astro';
+import Icon from '@/components/ui/primitives/Icon/Icon.astro';
+import Badge from '@/components/ui/data-display/Badge/Badge.astro';
+import Card from '@/components/ui/data-display/Card/Card.astro';
+import Button from '@/components/ui/form/Button/Button.astro';
+import { Hero } from '@/components/hero';
+import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
+---
+<PageLayout
+  title="Serviços — SEO, AEO, GEO e Estratégia Digital"
+  description="Do diagnóstico ao conteúdo: seis serviços integrados para posicionar seu negócio no Google, nas redes sociais e nas IAs."
+>
+  <Hero layout="centered" size="sm" class="isolate services-hero" showHeroHalo>
+    <Badge slot="badge" variant="brand" pill>
+      <Icon name="sparkles" size="sm" />
+      Serviços
+    </Badge>
+    <h1 slot="title">
+      <span class="text-foreground">Do diagnóstico ao resultado —</span><br />
+      <span class="text-brand-500">estratégia digital integrada.</span>
+    </h1>
+
+    <p slot="description">
+      Seis serviços que funcionam em conjunto, do primeiro diagnóstico até o conteúdo que posiciona sua marca no Google, nas redes sociais e nas IAs.
+    </p>
+
+    <Fragment slot="actions">
+      <Button size="lg" href="#imersao" variant="outline">
+        Imersão Cliente
+        <Icon name="arrow-down" size="sm" class="hero-jump-arrow" />
+      </Button>
+      <Button size="lg" href="#inteligencia" variant="outline">
+        Inteligência de Mercado
+        <Icon name="arrow-down" size="sm" class="hero-jump-arrow" />
+      </Button>
+      <Button size="lg" href="#design" variant="outline">
+        Design Web
+        <Icon name="arrow-down" size="sm" class="hero-jump-arrow" />
+      </Button>
+      <Button size="lg" href="#seo" variant="outline">
+        SEO & Performance
+        <Icon name="arrow-down" size="sm" class="hero-jump-arrow" />
+      </Button>
+      <Button size="lg" href="#ias" variant="outline">
+        Customização de IAs
+        <Icon name="arrow-down" size="sm" class="hero-jump-arrow" />
+      </Button>
+      <Button size="lg" href="#conteudo" variant="outline">
+        Conteúdo de Impacto
+        <Icon name="arrow-down" size="sm" class="hero-jump-arrow" />
+      </Button>
+    </Fragment>
+  </Hero>
+
+  <!-- 1. Imersão Cliente -->
+  <section id="imersao" class="py-[var(--space-section-md)] bg-background-secondary border-t border-border">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="grid gap-10 glitch:grid-cols-2 glitch:gap-12 glitch:items-start">
+        <div class="flex flex-col gap-4 sm:items-center sm:text-center glitch:items-start glitch:text-left" data-reveal data-reveal-eager data-reveal-ease="smooth">
+          <div class="flex flex-col gap-6 sm:items-center glitch:items-start">
+            <Badge variant="brand" pill class="self-start sm:self-center glitch:self-start">
+              <Icon name="search" size="sm" />
+              Imersão Cliente
+            </Badge>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground">
+              Antes de planejar, entender
+            </h2>
+          </div>
+          <p class="text-lg text-foreground-muted leading-relaxed text-pretty sm:max-w-xl sm:mx-auto glitch:max-w-none glitch:mx-0">
+            Todo projeto começa com uma imersão profunda no seu negócio. Estudo seu mercado, seu público, sua concorrência e como você é percebido hoje — no Google, nas redes e nas IAs.
+          </p>
+          <p class="text-lg text-foreground-muted leading-relaxed text-pretty sm:max-w-xl sm:mx-auto glitch:max-w-none glitch:mx-0">
+            Sem esse passo, qualquer estratégia é chute. Com ele, cada decisão tem uma razão baseada em dados reais — não em tendências genéricas ou intuição de agência.
+          </p>
+          <Button variant="outline" href="/contato" class="self-start sm:self-center glitch:self-start mt-2 sm:hidden glitch:inline-flex">
+            Quero um diagnóstico
+            <Icon name="arrow-right" size="sm" />
+          </Button>
+        </div>
+        <div class="sm:max-w-xl sm:mx-auto glitch:max-w-none glitch:mx-0" data-reveal data-reveal-eager data-reveal-ease="smooth">
+          <Card variant="elevated" padding="lg" class="h-full flex flex-col justify-center">
+            <div class="flex items-center gap-3 pb-4 mb-4 border-b border-border sm:justify-center glitch:justify-start">
+              <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center text-brand-500 shrink-0">
+                <Icon name="search" size="md" />
+              </div>
+              <h3 class="font-display text-base font-semibold text-foreground">O que está incluído</h3>
+            </div>
+            <ul class="flex flex-col gap-3">
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Análise de negócio</span> — mapeio seu posicionamento atual, diferenciais reais e lacunas que sua concorrência ainda não preencheu.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Auditoria de presença digital</span> — como você aparece (ou não aparece) no Google, nas redes sociais e nas respostas de IAs como ChatGPT e Gemini.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Análise da concorrência</span> — o que seus principais concorrentes estão fazendo bem, onde estão errando e onde está a sua oportunidade.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Diagnóstico técnico do site</span> — velocidade, rastreabilidade, erros de SEO técnico e pontos críticos que travam o crescimento orgânico.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Relatório de prioridades</span> — entrega prática com o que precisa ser feito primeiro, com impacto estimado para cada ação.
+                </p>
+              </li>
+            </ul>
+          </Card>
+        </div>
+        <div class="hidden sm:flex justify-center glitch:hidden" data-reveal data-reveal-delay="2">
+          <Button variant="outline" href="/contato">
+            Quero um diagnóstico
+            <Icon name="arrow-right" size="sm" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Inteligência de Mercado -->
+  <section id="inteligencia" class="py-[var(--space-section-md)] bg-background border-t border-border">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="grid gap-10 glitch:grid-cols-2 glitch:gap-12 glitch:items-start">
+        <div class="flex flex-col gap-4 sm:items-center sm:text-center glitch:order-2 glitch:items-start glitch:text-left" data-reveal data-reveal-delay="1" data-reveal-ease="smooth">
+          <div class="flex flex-col gap-6 sm:items-center glitch:items-start">
+            <Badge variant="brand" pill class="self-start sm:self-center glitch:self-start">
+              <Icon name="bar-chart-2" size="sm" />
+              Inteligência de Mercado
+            </Badge>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground">
+              Saber o que seu público está procurando
+            </h2>
+          </div>
+          <p class="text-lg text-foreground-muted leading-relaxed text-pretty sm:max-w-xl sm:mx-auto glitch:max-w-none glitch:mx-0">
+            Mapeio os termos mais buscados no Google, os tópicos que viralizam nas redes e os prompts que as pessoas usam nas IAs para encontrar negócios como o seu.
+          </p>
+          <p class="text-lg text-foreground-muted leading-relaxed text-pretty sm:max-w-xl sm:mx-auto glitch:max-w-none glitch:mx-0">
+            O resultado é um mapa claro de oportunidades — palavras-chave, perguntas frequentes e lacunas de conteúdo que sua concorrência ainda não descobriu.
+          </p>
+          <Button variant="outline" href="/contato" class="self-start sm:self-center glitch:self-start mt-2 sm:hidden glitch:inline-flex">
+            Quero mapear meu mercado
+            <Icon name="arrow-right" size="sm" />
+          </Button>
+        </div>
+        <div class="sm:max-w-xl sm:mx-auto glitch:order-1 glitch:max-w-none glitch:mx-0" data-reveal data-reveal-ease="smooth">
+          <Card variant="elevated" padding="lg" class="h-full flex flex-col justify-center">
+            <div class="flex items-center gap-3 pb-4 mb-4 border-b border-border sm:justify-center glitch:justify-start">
+              <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center text-brand-500 shrink-0">
+                <Icon name="bar-chart-2" size="md" />
+              </div>
+              <h3 class="font-display text-base font-semibold text-foreground">O que está incluído</h3>
+            </div>
+            <ul class="flex flex-col gap-3">
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Pesquisa de palavras-chave</span> — volume, dificuldade, intenção de busca e oportunidades de posicionamento no Google para o seu nicho.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Mapeamento de prompts em IAs</span> — o que as pessoas perguntam ao ChatGPT, Gemini e Perplexity quando buscam produtos ou serviços do seu segmento.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Análise de perguntas do público</span> — ferramentas como AnswerThePublic e SEMrush para mapear dúvidas reais que seu conteúdo precisa responder.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Gap de conteúdo</span> — o que seus concorrentes ranqueiam e você ainda não cobre. Cada lacuna é uma oportunidade de tráfego qualificado.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Pauta estratégica</span> — lista priorizada de temas e formatos de conteúdo com maior potencial de impacto orgânico.
+                </p>
+              </li>
+            </ul>
+          </Card>
+        </div>
+        <div class="hidden sm:flex justify-center glitch:hidden" data-reveal data-reveal-delay="2">
+          <Button variant="outline" href="/contato">
+            Quero mapear meu mercado
+            <Icon name="arrow-right" size="sm" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Design Web -->
+  <section id="design" class="py-[var(--space-section-md)] bg-background-secondary border-t border-border">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="grid gap-10 glitch:grid-cols-2 glitch:gap-12 glitch:items-start">
+        <div class="flex flex-col gap-4 sm:items-center sm:text-center glitch:items-start glitch:text-left" data-reveal data-reveal-eager data-reveal-ease="smooth">
+          <div class="flex flex-col gap-6 sm:items-center glitch:items-start">
+            <Badge variant="brand" pill class="self-start sm:self-center glitch:self-start">
+              <Icon name="layout" size="sm" />
+              Design Web
+            </Badge>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground">
+              Design com intenção
+            </h2>
+          </div>
+          <p class="text-lg text-foreground-muted leading-relaxed text-pretty sm:max-w-xl sm:mx-auto glitch:max-w-none glitch:mx-0">
+            Não parto do zero — parto do melhor. Faço curadoria de templates profissionais e os customizo para refletir a identidade do seu negócio, economizando tempo sem abrir mão da qualidade.
+          </p>
+          <p class="text-lg text-foreground-muted leading-relaxed text-pretty sm:max-w-xl sm:mx-auto glitch:max-w-none glitch:mx-0">
+            O resultado é um site com aparência profissional e personalizada, a um custo e prazo muito menores do que um design do zero.
+          </p>
+          <Button variant="outline" href="/contato" class="self-start sm:self-center glitch:self-start mt-2 sm:hidden glitch:inline-flex">
+            Falar sobre design
+            <Icon name="arrow-right" size="sm" />
+          </Button>
+        </div>
+        <div class="sm:max-w-xl sm:mx-auto glitch:max-w-none glitch:mx-0" data-reveal data-reveal-eager data-reveal-ease="smooth">
+          <Card variant="elevated" padding="lg" class="h-full flex flex-col justify-center">
+            <div class="flex items-center gap-3 pb-4 mb-4 border-b border-border sm:justify-center glitch:justify-start">
+              <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center text-brand-500 shrink-0">
+                <Icon name="layout" size="md" />
+              </div>
+              <h3 class="font-display text-base font-semibold text-foreground">O que está incluído</h3>
+            </div>
+            <ul class="flex flex-col gap-3">
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Curadoria de templates</span> — seleção criteriosa de temas profissionais alinhados ao seu segmento, público e objetivos de negócio.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Customização de identidade visual</span> — cores, tipografia, ícones e imagens ajustados para refletir a marca com consistência em todas as páginas.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Adaptação de conteúdo e estrutura</span> — reorganização das seções do template para encaixar sua mensagem, seus serviços e seu fluxo de conversão.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Temas claro e escuro</span> — verificação e ajuste dos dois modos para que a experiência seja consistente independentemente da preferência do usuário.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Entrega pronta para lançar</span> — site configurado, hospedado e revisado. Sem pendências técnicas, sem surpresas depois da entrega.
+                </p>
+              </li>
+            </ul>
+          </Card>
+        </div>
+        <div class="hidden sm:flex justify-center glitch:hidden" data-reveal data-reveal-delay="2">
+          <Button variant="outline" href="/contato">
+            Falar sobre design
+            <Icon name="arrow-right" size="sm" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SEO & Performance -->
+  <section id="seo" class="py-[var(--space-section-md)] bg-background border-t border-border">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="grid gap-10 glitch:grid-cols-2 glitch:gap-12 glitch:items-start">
+        <div class="flex flex-col gap-4 sm:items-center sm:text-center glitch:order-2 glitch:items-start glitch:text-left" data-reveal data-reveal-delay="1" data-reveal-ease="smooth">
+          <div class="flex flex-col gap-6 sm:items-center glitch:items-start">
+            <Badge variant="brand" pill class="self-start sm:self-center glitch:self-start">
+              <Icon name="zap" size="sm" />
+              SEO & Performance
+            </Badge>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground">
+              Páginas rápidas, páginas encontradas
+            </h2>
+          </div>
+          <p class="text-lg text-foreground-muted leading-relaxed text-pretty sm:max-w-xl sm:mx-auto glitch:max-w-none glitch:mx-0">
+            Velocidade e visibilidade nas buscas não são recursos para adicionar no final — são restrições a respeitar desde o primeiro commit. Cada segundo de carregamento custa atenção, ranqueamento e confiança.
+          </p>
+          <p class="text-lg text-foreground-muted leading-relaxed text-pretty sm:max-w-xl sm:mx-auto glitch:max-w-none glitch:mx-0">
+            Trabalho com metas mensuráveis: Core Web Vitals, SEO técnico e dados estruturados são configurados, verificados e entregues junto com o site — não adicionados depois como remendo.
+          </p>
+          <Button variant="outline" href="/contato" class="self-start sm:self-center glitch:self-start mt-2 sm:hidden glitch:inline-flex">
+            Quero melhorar meu SEO
+            <Icon name="arrow-right" size="sm" />
+          </Button>
+        </div>
+        <div class="sm:max-w-xl sm:mx-auto glitch:order-1 glitch:max-w-none glitch:mx-0" data-reveal data-reveal-ease="smooth">
+          <Card variant="elevated" padding="lg" class="h-full flex flex-col justify-center">
+            <div class="flex items-center gap-3 pb-4 mb-4 border-b border-border sm:justify-center glitch:justify-start">
+              <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center text-brand-500 shrink-0">
+                <Icon name="zap" size="md" />
+              </div>
+              <h3 class="font-display text-base font-semibold text-foreground">O que está incluído</h3>
+            </div>
+            <ul class="flex flex-col gap-3">
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Core Web Vitals</span> — LCP, INP e CLS dentro dos limites do Google. Medidos em dispositivos reais, não só em testes sintéticos.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">SEO técnico completo</span> — metadados, sitemaps, robots.txt, canonicals, dados estruturados (Schema.org) e imagens OG validadas.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">AEO — Answer Engine Optimization</span> — estruturação de conteúdo para aparecer nas respostas das IAs, AI Overviews do Google e featured snippets.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">GEO — Generative Engine Optimization</span> — posicionamento da sua marca como fonte citada pelo ChatGPT, Gemini, Perplexity e outros LLMs.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Auditorias Lighthouse</span> — notas mensuráveis entregues junto com o site e monitoradas continuamente após o lançamento.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Google Search Console & Analytics</span> — configuração, verificação de propriedade e painel entregue para você acompanhar o crescimento.
+                </p>
+              </li>
+            </ul>
+          </Card>
+        </div>
+        <div class="hidden sm:flex justify-center glitch:hidden" data-reveal data-reveal-delay="2">
+          <Button variant="outline" href="/contato">
+            Quero melhorar meu SEO
+            <Icon name="arrow-right" size="sm" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Customização de IAs -->
+  <section id="ias" class="py-[var(--space-section-md)] bg-background-secondary border-t border-border">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="grid gap-10 glitch:grid-cols-2 glitch:gap-12 glitch:items-start">
+        <div class="flex flex-col gap-4 sm:items-center sm:text-center glitch:items-start glitch:text-left" data-reveal data-reveal-eager data-reveal-ease="smooth">
+          <div class="flex flex-col gap-6 sm:items-center glitch:items-start">
+            <Badge variant="brand" pill class="self-start sm:self-center glitch:self-start">
+              <Icon name="cpu" size="sm" />
+              Customização de IAs
+            </Badge>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground">
+              IA configurada para o seu negócio
+            </h2>
+          </div>
+          <p class="text-lg text-foreground-muted leading-relaxed text-pretty sm:max-w-xl sm:mx-auto glitch:max-w-none glitch:mx-0">
+            Não basta usar IA — é preciso configurá-la para o seu contexto. Configuro e conecto ferramentas como Claude, ChatGPT, Gemini, Higgsfield e Canva para trabalhar a favor do seu negócio.
+          </p>
+          <p class="text-lg text-foreground-muted leading-relaxed text-pretty sm:max-w-xl sm:mx-auto glitch:max-w-none glitch:mx-0">
+            O resultado é um fluxo de trabalho onde a IA cuida do que é repetitivo — e você foca no que exige julgamento humano e estratégia.
+          </p>
+          <Button variant="outline" href="/contato" class="self-start sm:self-center glitch:self-start mt-2 sm:hidden glitch:inline-flex">
+            Quero customizar IAs
+            <Icon name="arrow-right" size="sm" />
+          </Button>
+        </div>
+        <div class="sm:max-w-xl sm:mx-auto glitch:max-w-none glitch:mx-0" data-reveal data-reveal-eager data-reveal-ease="smooth">
+          <Card variant="elevated" padding="lg" class="h-full flex flex-col justify-center">
+            <div class="flex items-center gap-3 pb-4 mb-4 border-b border-border sm:justify-center glitch:justify-start">
+              <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center text-brand-500 shrink-0">
+                <Icon name="cpu" size="md" />
+              </div>
+              <h3 class="font-display text-base font-semibold text-foreground">O que está incluído</h3>
+            </div>
+            <ul class="flex flex-col gap-3">
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Configuração de agentes de IA</span> — Claude, ChatGPT e Gemini treinados com o contexto do seu negócio, tom de voz e processos internos.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Criação de prompts estratégicos</span> — biblioteca de prompts prontos para as tarefas mais frequentes: conteúdo, atendimento, análise e relatórios.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Integração de ferramentas</span> — conexão entre IAs e as plataformas que você já usa: CRM, e-mail marketing, redes sociais e gestão de projetos.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Automação de produção de conteúdo</span> — fluxos com Higgsfield, Canva e ferramentas de texto para produzir mais em menos tempo, sem perder qualidade.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Treinamento da equipe</span> — sessão prática para sua equipe aprender a usar as ferramentas configuradas com autonomia e consistência.
+                </p>
+              </li>
+            </ul>
+          </Card>
+        </div>
+        <div class="hidden sm:flex justify-center glitch:hidden" data-reveal data-reveal-delay="2">
+          <Button variant="outline" href="/contato">
+            Quero customizar IAs
+            <Icon name="arrow-right" size="sm" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Conteúdo de Impacto -->
+  <section id="conteudo" class="py-[var(--space-section-md)] bg-background border-t border-border">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="grid gap-10 glitch:grid-cols-2 glitch:gap-12 glitch:items-start">
+        <div class="flex flex-col gap-4 sm:items-center sm:text-center glitch:order-2 glitch:items-start glitch:text-left" data-reveal data-reveal-delay="1" data-reveal-ease="smooth">
+          <div class="flex flex-col gap-6 sm:items-center glitch:items-start">
+            <Badge variant="brand" pill class="self-start sm:self-center glitch:self-start">
+              <Icon name="pen-tool" size="sm" />
+              Conteúdo de Impacto
+            </Badge>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground">
+              Conteúdo que ranqueia e convence
+            </h2>
+          </div>
+          <p class="text-lg text-foreground-muted leading-relaxed text-pretty sm:max-w-xl sm:mx-auto glitch:max-w-none glitch:mx-0">
+            Conteúdo bom não é aquele que soa bem para você — é aquele que aparece quando seu cliente pesquisa no Google, pergunta ao ChatGPT ou pede uma recomendação ao Gemini.
+          </p>
+          <p class="text-lg text-foreground-muted leading-relaxed text-pretty sm:max-w-xl sm:mx-auto glitch:max-w-none glitch:mx-0">
+            Crio conteúdo estruturado para SEO, AEO e GEO: textos que ranqueiam nas buscas tradicionais <em>e</em> posicionam sua marca dentro das respostas das LLMs — onde a próxima geração de clientes está tomando decisões.
+          </p>
+          <Button variant="outline" href="/contato" class="self-start sm:self-center glitch:self-start mt-2 sm:hidden glitch:inline-flex">
+            Quero conteúdo de impacto
+            <Icon name="arrow-right" size="sm" />
+          </Button>
+        </div>
+        <div class="sm:max-w-xl sm:mx-auto glitch:order-1 glitch:max-w-none glitch:mx-0" data-reveal data-reveal-ease="smooth">
+          <Card variant="elevated" padding="lg" class="h-full flex flex-col justify-center">
+            <div class="flex items-center gap-3 pb-4 mb-4 border-b border-border sm:justify-center glitch:justify-start">
+              <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center text-brand-500 shrink-0">
+                <Icon name="pen-tool" size="md" />
+              </div>
+              <h3 class="font-display text-base font-semibold text-foreground">O que está incluído</h3>
+            </div>
+            <ul class="flex flex-col gap-3">
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Artigos para SEO, AEO e GEO</span> — textos com profundidade real, estruturados para ranquear no Google <em>e</em> para ser citados como fonte pelo ChatGPT, Gemini e Perplexity.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Copywriting para páginas</span> — home, sobre, serviços e landing pages. Textos que comunicam valor em segundos e guiam o visitante para a ação.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Conteúdo para redes sociais</span> — publicações e roteiros pensados para engajamento orgânico, consistentes com a voz da marca.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">FAQ estruturado</span> — perguntas e respostas otimizadas para aparecer nos featured snippets do Google e nas respostas das IAs.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Calendário editorial</span> — planejamento de longo prazo com temas, formatos, datas e metas de tráfego para cada publicação.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
+                <p class="text-sm text-foreground-muted leading-relaxed">
+                  <span class="font-semibold text-foreground">Revisão e otimização de conteúdo existente</span> — atualização de artigos antigos com novos dados, palavras-chave e estrutura para recuperar ou ampliar posições.
+                </p>
+              </li>
+            </ul>
+          </Card>
+        </div>
+        <div class="hidden sm:flex justify-center glitch:hidden" data-reveal data-reveal-delay="2">
+          <Button variant="outline" href="/contato">
+            Quero conteúdo de impacto
+            <Icon name="arrow-right" size="sm" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative z-10 py-[var(--space-section-md)] bg-background-secondary border-t border-border">
+    <div class="glitch:hidden mx-auto max-w-2xl px-6 text-center" data-reveal>
+      <Badge variant="brand" pill class="mb-6">Vamos conversar</Badge>
+      <h2 class="font-display text-4xl font-bold text-foreground mb-4 text-balance">
+        Tem um projeto em mente?
+      </h2>
+      <p class="text-lg text-foreground-muted mb-8 text-balance">
+        Envie uma mensagem curta sobre o que você está construindo e o que precisa. Eu leio todas as mensagens e respondo em até um dia útil.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button size="lg" href="/contato" class="cta-btn-brand">
+          Iniciar um projeto
+          <Icon name="arrow-right" size="sm" />
+        </Button>
+      </div>
+    </div>
+
+    <LetterGlitchBand>
+      <h2 class="font-display text-4xl font-bold text-foreground mb-4 text-balance">
+        Tem um projeto em mente?
+      </h2>
+      <p class="text-lg text-foreground-muted mb-8 text-balance">
+        Envie uma mensagem curta sobre o que você está construindo e o que precisa. Eu leio todas as mensagens e respondo em até um dia útil.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button size="lg" href="/contato" class="hero-btn-brand">
+          Iniciar um projeto
+          <Icon name="arrow-right" size="sm" />
+        </Button>
+      </div>
+    </LetterGlitchBand>
+  </section>
+</PageLayout>
+
+<style is:global>
+  .services-hero .hero-jump-arrow {
+    animation: hero-jump-arrow-bounce 1.8s ease-in-out infinite;
+  }
+  @keyframes hero-jump-arrow-bounce {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(4px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .services-hero .hero-jump-arrow { animation: none; }
+  }
+
+  html { scroll-padding-top: 4rem; }
+
+  .reveal-instant[data-reveal],
+  .reveal-instant [data-reveal],
+  .reveal-instant[data-reveal-children] > *,
+  .reveal-instant [data-reveal-children] > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    function initServicesHeroJump() {
+      const hero = document.querySelector('.services-hero');
+      if (!hero) return;
+      const buttons = hero.querySelectorAll('a[href^="#"]');
+      if (!buttons.length) return;
+
+      function revealUpToAndIncluding(target) {
+        const reveals = document.querySelectorAll('[data-reveal], [data-reveal-children]');
+        Array.prototype.forEach.call(reveals, function (el) {
+          const targetFollowsEl =
+            el.compareDocumentPosition(target) & Node.DOCUMENT_POSITION_FOLLOWING;
+          if (el === target || target.contains(el) || targetFollowsEl) {
+            el.classList.add('reveal-instant', 'is-visible');
+          }
+        });
+      }
+
+      const targetIds = [];
+      Array.prototype.forEach.call(buttons, function (btn) {
+        const hash = btn.getAttribute('href');
+        const id = hash ? hash.slice(1) : '';
+        if (id) targetIds.push(id);
+        btn.addEventListener('click', function () {
+          const target = id && document.getElementById(id);
+          if (target) revealUpToAndIncluding(target);
+        });
+      });
+
+      const initialId = location.hash ? location.hash.slice(1) : '';
+      if (initialId && targetIds.indexOf(initialId) !== -1) {
+        const target = document.getElementById(initialId);
+        if (target) revealUpToAndIncluding(target);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initServicesHeroJump);
+    } else {
+      initServicesHeroJump();
+    }
+  })();
+</script>

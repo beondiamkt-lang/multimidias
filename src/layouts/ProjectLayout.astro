@@ -66,7 +66,7 @@ const sidebarOnLeft = (tocConfig?.sidebarPosition ?? 'right') === 'left';
 
 const breadcrumbs = [
   { label: 'Home', href: '/' },
-  { label: 'Projects', href: '/projects' },
+  { label: 'Projetos', href: '/projetos' },
   { label: title },
 ];
 ---
@@ -136,9 +136,9 @@ const breadcrumbs = [
           </div>
 
           <footer class="border-border mt-12 border-t pt-8 flex justify-center" data-reveal>
-            <Button href="/projects" variant="secondary" size="sm">
+            <Button href="/projetos" variant="secondary" size="sm">
               <Icon name="arrow-left" size="sm" />
-              Back to Projects
+              Voltar para Projetos
             </Button>
           </footer>
         </div>
@@ -166,7 +166,7 @@ const breadcrumbs = [
                 variant="elevated"
                 hover
                 padding="none"
-                href={project.data.placeholder ? undefined : `/projects/${project.id.replace(/\.mdx?$/, '')}`}
+                href={project.data.placeholder ? undefined : `/projetos/${project.id.replace(/\.mdx?$/, '')}`}
                 class="group flex flex-col"
               >
                 <div class="flex flex-1 flex-col p-6">
@@ -205,20 +205,20 @@ const breadcrumbs = [
     <section class="relative z-10 py-[var(--space-section-md)] bg-background border-t border-border">
       <!-- Mobile: flat section, no glitch band -->
       <div class="glitch:hidden mx-auto max-w-2xl px-6 text-center" data-reveal>
-        <Badge variant="brand" pill class="mb-6">Let's talk</Badge>
+        <Badge variant="brand" pill class="mb-6">Vamos conversar</Badge>
         <h2 class="font-display text-4xl font-bold text-foreground mb-4 text-balance">
-          Have a project in mind?
+          Tem um projeto em mente?
         </h2>
         <p class="text-lg text-foreground-muted mb-8 text-balance">
-          Whether it's a new build or something that needs a fresh perspective — I'd love to hear about it.
+          Seja uma construção nova ou algo que precise de um novo olhar — eu adoraria saber mais sobre isso.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" href="/contact" class="cta-btn-brand">
-            Start a project
+          <Button size="lg" href="/contato" class="cta-btn-brand">
+            Iniciar um projeto
             <Icon name="arrow-right" size="sm" />
           </Button>
-          <Button size="lg" variant="outline" href="/projects">
-            All projects
+          <Button size="lg" variant="outline" href="/projetos">
+            Ver todos os projetos
             <Icon name="arrow-right" size="sm" />
           </Button>
         </div>
@@ -227,18 +227,18 @@ const breadcrumbs = [
       <!-- Desktop: LetterGlitch band with glass card -->
       <LetterGlitchBand maxWidth="7xl">
         <h2 class="font-display text-4xl font-bold text-foreground mb-4 text-balance">
-          Have a project in mind?
+          Tem um projeto em mente?
         </h2>
         <p class="text-lg text-foreground-muted mb-8 text-balance">
-          Whether it's a new build or something that needs a fresh perspective — I'd love to hear about it.
+          Seja uma construção nova ou algo que precise de um novo olhar — eu adoraria saber mais sobre isso.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" href="/contact" class="hero-btn-brand">
-            Start a project
+          <Button size="lg" href="/contato" class="hero-btn-brand">
+            Iniciar um projeto
             <Icon name="arrow-right" size="sm" />
           </Button>
-          <Button size="lg" variant="outline" href="/projects">
-            All projects
+          <Button size="lg" variant="outline" href="/projetos">
+            Ver todos os projetos
             <Icon name="arrow-right" size="sm" />
           </Button>
         </div>
