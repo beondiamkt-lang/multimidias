@@ -51,10 +51,6 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
             Iniciar um projeto
             <Icon name="arrow-right" size="sm" />
           </Button>
-          <Button size="lg" variant="outline" href="/sobre">
-            Mais sobre mim
-            <Icon name="arrow-right" size="sm" />
-          </Button>
         </div>
       </div>
     </div>
@@ -221,12 +217,6 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
         ))}
       </div>
 
-      <div class="text-center mt-4">
-        <Button variant="outline" href="/projetos">
-          Ver todos os projetos
-          <Icon name="arrow-right" size="sm" />
-        </Button>
-      </div>
     </div>
   </section>
 

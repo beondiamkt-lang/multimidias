@@ -135,12 +135,7 @@ const breadcrumbs = [
             <slot />
           </div>
 
-          <footer class="border-border mt-12 border-t pt-8 flex justify-center" data-reveal>
-            <Button href="/projetos" variant="secondary" size="sm">
-              <Icon name="arrow-left" size="sm" />
-              Voltar para Projetos
-            </Button>
-          </footer>
+          <footer class="border-border mt-12 border-t pt-8" data-reveal></footer>
         </div>
 
         {sidebarActive && !sidebarOnLeft && (
@@ -217,10 +212,6 @@ const breadcrumbs = [
             Iniciar um projeto
             <Icon name="arrow-right" size="sm" />
           </Button>
-          <Button size="lg" variant="outline" href="/projetos">
-            Ver todos os projetos
-            <Icon name="arrow-right" size="sm" />
-          </Button>
         </div>
       </div>
 
@@ -235,10 +226,6 @@ const breadcrumbs = [
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" href="/contato" class="hero-btn-brand">
             Iniciar um projeto
-            <Icon name="arrow-right" size="sm" />
-          </Button>
-          <Button size="lg" variant="outline" href="/projetos">
-            Ver todos os projetos
             <Icon name="arrow-right" size="sm" />
           </Button>
         </div>
