@@ -36,7 +36,7 @@ const LetterGlitch = ({
       colorProgress: number;
     }[]
   >([]);
-  const grid = useRef({ columns: 0, rows: 0 });
+  const grid = useRef({ columns: 0, rows: 0, cw: 10, ch: 20 });
   // Cached canvas dimensions — updated only in resizeCanvas (called on init
   // and on window resize). Reading getBoundingClientRect() per frame from
   // drawLetters() forced a synchronous layout recompute on every animation
@@ -108,14 +108,27 @@ const LetterGlitch = ({
     return `rgb(${result.r}, ${result.g}, ${result.b})`;
   };
 
+  // Cap total characters to keep each frame under ~50ms even with 4x CPU throttle.
+  // Beyond ~2500 fillText() calls per frame, Lighthouse registers long tasks on desktop.
+  const MAX_LETTERS = 2500;
+
   const calculateGrid = (width: number, height: number) => {
-    const columns = Math.ceil(width / charWidth);
-    const rows = Math.ceil(height / charHeight);
-    return { columns, rows };
+    let cw = charWidth;
+    let ch = charHeight;
+    const naturalCols = Math.ceil(width / cw);
+    const naturalRows = Math.ceil(height / ch);
+    if (naturalCols * naturalRows > MAX_LETTERS) {
+      const scale = Math.sqrt((naturalCols * naturalRows) / MAX_LETTERS);
+      cw = Math.ceil(cw * scale);
+      ch = Math.ceil(ch * scale);
+    }
+    const columns = Math.ceil(width / cw);
+    const rows = Math.ceil(height / ch);
+    return { columns, rows, cw, ch };
   };
 
-  const initializeLetters = (columns: number, rows: number) => {
-    grid.current = { columns, rows };
+  const initializeLetters = (columns: number, rows: number, cw: number, ch: number) => {
+    grid.current = { columns, rows, cw, ch };
     const totalLetters = columns * rows;
     letters.current = Array.from({ length: totalLetters }, () => ({
       char: getRandomChar(),
@@ -133,9 +146,10 @@ const LetterGlitch = ({
     ctx.font = `${fontSize}px monospace`;
     ctx.textBaseline = 'top';
 
+    const { columns, cw, ch } = grid.current;
     letters.current.forEach((letter, index) => {
-      const x = (index % grid.current.columns) * charWidth;
-      const y = Math.floor(index / grid.current.columns) * charHeight;
+      const x = (index % columns) * cw;
+      const y = Math.floor(index / columns) * ch;
       ctx.fillStyle = letter.color;
       ctx.fillText(letter.char, x, y);
     });
@@ -164,8 +178,8 @@ const LetterGlitch = ({
       context.current.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
 
-    const { columns, rows } = calculateGrid(rect.width, rect.height);
-    initializeLetters(columns, rows);
+    const { columns, rows, cw, ch } = calculateGrid(rect.width, rect.height);
+    initializeLetters(columns, rows, cw, ch);
     drawLetters();
   };
 
