@@ -163,7 +163,13 @@ const {
     window.addEventListener('resize', onResize);
   }
 
-  // Support multiple instances on page (homepage hero + band sections)
-  document.querySelectorAll('.letter-glitch-root').forEach(init);
+  // Defer init until browser is idle so canvas setup doesn't run during
+  // the critical rendering path and avoids a forced reflow on page load.
+  const roots = document.querySelectorAll('.letter-glitch-root');
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => roots.forEach(init), { timeout: 2000 });
+  } else {
+    setTimeout(() => roots.forEach(init), 200);
+  }
 })();
 </script>
