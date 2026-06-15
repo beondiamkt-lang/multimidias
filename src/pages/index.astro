@@ -7,7 +7,7 @@ import Card from '@/components/ui/data-display/Card/Card.astro';
 import Icon from '@/components/ui/primitives/Icon/Icon.astro';
 import BlogCard from '@/components/blog/BlogCard.astro';
 import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
-import LetterGlitch from '@/components/effects/LetterGlitch';
+import LetterGlitch from '@/components/effects/LetterGlitch.astro';
 import StackMarquee from '@/components/landing/StackMarquee.astro';
 import { getCollection } from 'astro:content';
 import siteConfig from '@/config/site.config';
@@ -36,7 +36,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   <!-- Hero -->
   <section class="relative z-10 min-h-screen flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0" aria-hidden="true">
-      <LetterGlitch client:load outerVignette />
+      <LetterGlitch outerVignette />
     </div>
     <div class="relative z-10 px-6 py-24 w-full flex items-center justify-center">
       <div class="mx-auto max-w-2xl rounded-2xl border border-white/10 bg-brand-900/85 px-6 py-10 sm:px-10 text-center shadow-xl backdrop-blur-md">

@@ -1,0 +1,169 @@
+---
+interface Props {
+  outerVignette?: boolean;
+  centerVignette?: boolean;
+  glitchSpeed?: number;
+  smooth?: boolean;
+}
+
+const {
+  outerVignette = false,
+  centerVignette = false,
+  glitchSpeed = 33,
+  smooth = true,
+} = Astro.props;
+---
+
+<div class="letter-glitch-root relative w-full h-full bg-[#101010] overflow-hidden">
+  <canvas class="letter-glitch-canvas block w-full h-full"></canvas>
+  {outerVignette && (
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none bg-[radial-gradient(circle,_rgba(16,16,16,0)_60%,_rgba(16,16,16,1)_100%)]"></div>
+  )}
+  {centerVignette && (
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none bg-[radial-gradient(circle,_rgba(0,0,0,0.8)_0%,_rgba(0,0,0,0)_60%)]"></div>
+  )}
+</div>
+
+<script define:vars={{ glitchSpeed, smooth }}>
+(function () {
+  const BRAND_VARS = ['--brand-300', '--brand-600', '--brand-900'];
+  const FALLBACK_COLORS = ['#5e4491', '#A476FF', '#241a38'];
+  const FONT_SIZE = 16;
+  const CHAR_W = 10;
+  const CHAR_H = 20;
+  const SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$&*()-_+=/[]{};<>,0123456789'.split('');
+
+  function resolveBrandColors() {
+    try {
+      const tmp = document.createElement('canvas');
+      tmp.width = 1; tmp.height = 1;
+      const ctx = tmp.getContext('2d');
+      if (!ctx) return null;
+      const root = getComputedStyle(document.documentElement);
+      const out = [];
+      for (const v of BRAND_VARS) {
+        const raw = root.getPropertyValue(v).trim();
+        if (!raw) continue;
+        ctx.clearRect(0, 0, 1, 1);
+        ctx.fillStyle = '#000';
+        ctx.fillStyle = raw;
+        ctx.fillRect(0, 0, 1, 1);
+        const [r, g, b] = ctx.getImageData(0, 0, 1, 1).data;
+        out.push(`rgb(${r},${g},${b})`);
+      }
+      return out.length ? out : null;
+    } catch { return null; }
+  }
+
+  function parseRgb(color) {
+    const m = color.match(/rgb\((\d+),(\d+),(\d+)\)/);
+    if (m) return { r: +m[1], g: +m[2], b: +m[3] };
+    const h6 = color.match(/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i);
+    if (h6) return { r: parseInt(h6[1],16), g: parseInt(h6[2],16), b: parseInt(h6[3],16) };
+    return null;
+  }
+
+  function lerp(a, b, t) {
+    return `rgb(${Math.round(a.r+(b.r-a.r)*t)},${Math.round(a.g+(b.g-a.g)*t)},${Math.round(a.b+(b.b-a.b)*t)})`;
+  }
+
+  function rand(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+  function init(root) {
+    const canvas = root.querySelector('.letter-glitch-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const colors = resolveBrandColors() || FALLBACK_COLORS;
+    let letters = [];
+    let cols = 0, rows = 0;
+    let dimW = 0, dimH = 0;
+    let raf = null;
+    let lastTick = Date.now();
+
+    function resize() {
+      const parent = canvas.parentElement;
+      if (!parent) return;
+      const dpr = window.devicePixelRatio || 1;
+      const rect = parent.getBoundingClientRect();
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      canvas.style.width = rect.width + 'px';
+      canvas.style.height = rect.height + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      dimW = rect.width;
+      dimH = rect.height;
+      cols = Math.ceil(dimW / CHAR_W);
+      rows = Math.ceil(dimH / CHAR_H);
+      letters = Array.from({ length: cols * rows }, () => ({
+        char: rand(SYMBOLS),
+        color: rand(colors),
+        target: rand(colors),
+        progress: 1,
+      }));
+      draw();
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, dimW, dimH);
+      ctx.font = FONT_SIZE + 'px monospace';
+      ctx.textBaseline = 'top';
+      for (let i = 0; i < letters.length; i++) {
+        const l = letters[i];
+        ctx.fillStyle = l.color;
+        ctx.fillText(l.char, (i % cols) * CHAR_W, Math.floor(i / cols) * CHAR_H);
+      }
+    }
+
+    function tick() {
+      const now = Date.now();
+      if (now - lastTick >= glitchSpeed) {
+        const count = Math.max(1, Math.floor(letters.length * 0.05));
+        for (let i = 0; i < count; i++) {
+          const l = letters[Math.floor(Math.random() * letters.length)];
+          if (!l) continue;
+          l.char = rand(SYMBOLS);
+          l.target = rand(colors);
+          if (smooth) { l.progress = 0; } else { l.color = l.target; l.progress = 1; }
+        }
+        draw();
+        lastTick = now;
+      }
+
+      if (smooth) {
+        let dirty = false;
+        for (const l of letters) {
+          if (l.progress < 1) {
+            l.progress = Math.min(1, l.progress + 0.05);
+            const a = parseRgb(l.color), b = parseRgb(l.target);
+            if (a && b) { l.color = lerp(a, b, l.progress); dirty = true; }
+          }
+        }
+        if (dirty) draw();
+      }
+
+      raf = requestAnimationFrame(tick);
+    }
+
+    resize();
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReduced) tick();
+
+    let resizeTimer;
+    const onResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        cancelAnimationFrame(raf);
+        resize();
+        if (!prefersReduced) tick();
+      }, 100);
+    };
+    window.addEventListener('resize', onResize);
+  }
+
+  // Support multiple instances on page (homepage hero + band sections)
+  document.querySelectorAll('.letter-glitch-root').forEach(init);
+})();
+</script>
