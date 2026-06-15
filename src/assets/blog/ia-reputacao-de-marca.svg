@@ -1,0 +1,60 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg { fill: var(--brand-500); }
+    .txt { fill: var(--brand-50); font-weight: 800; font-family: system-ui, sans-serif; }
+    .sub { fill: var(--brand-100); font-weight: 500; font-family: system-ui, sans-serif; }
+    .cor { stroke: var(--brand-300); fill: none; opacity: 0.45; }
+    .ico { stroke: var(--brand-50); fill: none; opacity: 0.9; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+
+  <!-- Background -->
+  <rect width="1200" height="630" class="bg"/>
+
+  <!-- Corner decorations -->
+  <rect x="20" y="20" width="60" height="60" rx="6" class="cor" stroke-width="2"/>
+  <rect x="30" y="30" width="40" height="40" rx="4" class="cor" stroke-width="1.5"/>
+
+  <rect x="1120" y="20" width="60" height="60" rx="6" class="cor" stroke-width="2"/>
+  <rect x="1130" y="30" width="40" height="40" rx="4" class="cor" stroke-width="1.5"/>
+
+  <rect x="20" y="550" width="60" height="60" rx="6" class="cor" stroke-width="2"/>
+  <rect x="30" y="560" width="40" height="40" rx="4" class="cor" stroke-width="1.5"/>
+
+  <rect x="1120" y="550" width="60" height="60" rx="6" class="cor" stroke-width="2"/>
+  <rect x="1130" y="560" width="40" height="40" rx="4" class="cor" stroke-width="1.5"/>
+
+  <!-- Decorative circles background -->
+  <circle cx="200" cy="315" r="180" class="cor" stroke-width="1"/>
+  <circle cx="1000" cy="315" r="180" class="cor" stroke-width="1"/>
+  <circle cx="600" cy="315" r="280" class="cor" stroke-width="0.8"/>
+
+  <!-- Icon: Shield with AI brain/circuit inside — centered top area -->
+  <!-- Shield shape -->
+  <path d="M600 140 L680 175 L680 250 Q680 310 600 340 Q520 310 520 250 L520 175 Z"
+        class="ico" stroke-width="3"/>
+  <!-- Circuit lines inside shield -->
+  <line x1="560" y1="220" x2="590" y2="220" class="ico" stroke-width="2"/>
+  <line x1="590" y1="220" x2="590" y2="240" class="ico" stroke-width="2"/>
+  <line x1="590" y1="240" x2="620" y2="240" class="ico" stroke-width="2"/>
+  <line x1="620" y1="240" x2="620" y2="260" class="ico" stroke-width="2"/>
+  <line x1="620" y1="260" x2="640" y2="260" class="ico" stroke-width="2"/>
+  <line x1="560" y1="270" x2="580" y2="270" class="ico" stroke-width="2"/>
+  <line x1="580" y1="270" x2="580" y2="250" class="ico" stroke-width="2"/>
+  <line x1="580" y1="250" x2="610" y2="250" class="ico" stroke-width="2"/>
+  <!-- Dots on circuit -->
+  <circle cx="560" cy="220" r="4" class="ico" stroke-width="2"/>
+  <circle cx="640" cy="260" r="4" class="ico" stroke-width="2"/>
+  <circle cx="560" cy="270" r="4" class="ico" stroke-width="2"/>
+  <circle cx="610" cy="250" r="4" class="ico" stroke-width="2"/>
+  <!-- AI label inside shield -->
+  <text x="600" y="300" class="ico" text-anchor="middle" font-size="22" font-weight="800" stroke-width="1.5" font-family="system-ui, sans-serif">IA</text>
+
+  <!-- Main title -->
+  <text x="600" y="400" class="txt" text-anchor="middle" font-size="58">Sua Marca na Era da IA</text>
+
+  <!-- Subtitle -->
+  <text x="600" y="450" class="sub" text-anchor="middle" font-size="29">O que a IA fala sobre você — e como controlar essa narrativa</text>
+
+  <!-- Bottom tag -->
+  <text x="600" y="510" class="sub" text-anchor="middle" font-size="20" opacity="0.7">Neil Patel · NP Digital</text>
+</svg>
