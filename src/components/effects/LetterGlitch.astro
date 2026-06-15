@@ -163,6 +163,6 @@ const {
     window.addEventListener('resize', onResize);
   }
 
-  document.querySelectorAll('.letter-glitch-root').forEach(init);
+  setTimeout(() => document.querySelectorAll('.letter-glitch-root').forEach(init), 250);
 })();
 </script>
